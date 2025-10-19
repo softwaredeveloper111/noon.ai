@@ -1,12 +1,265 @@
-*{
+@font-face {
+  font-family: f1;
+  src: url(./public/fonts/rP2Yp2ywxg089UriI5-g4vlH9VoD8Cmcqbu0-K6z9mXg.woff2);
+}
+
+@font-face {
+  font-family: f2;
+  src: url(./public/fonts/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2);
+}
+
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-html,body{
+html,
+body {
   height: 100%;
   width: 100%;
+   overflow-x: hidden;
+  overflow-y: auto;
+}
+
+html {
+  font-size: clamp(14px, 1vw, 18px);
+  font-family: f1;
+ 
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+main {
+  width: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+
+   #view-1 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    position: relative;
+
+    nav {
+      position: relative;
+      z-index: 99;
+      width: 100%;
+      max-width: 60rem;
+      padding: 2.4rem;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+
+      #upper-section {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        #nav-left {
+          display: flex;
+          align-items: center;
+          gap: 0.7rem;
+
+          > h1 {
+            font-weight: 300;
+            font-size: 1.8rem;
+          }
+        }
+
+        #nav-right {
+          display: flex;
+          flex-wrap: nowrap;
+          align-items: center;
+          gap: 1rem;
+
+          > button {
+            background-color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 40px;
+            padding: 10px 20px;
+            color: white;
+
+            > i {
+              font-size: 1.1rem;
+              opacity: 0.8;
+            }
+
+            > span {
+              font-size: 1rem;
+              font-weight: 100;
+              color: rgba(255, 255, 255, 0.534);
+            }
+          }
+
+          > div {
+            display: none;
+            gap: 2rem;
+            align-items: center;
+
+            > button {
+              background-color: transparent;
+              border: 1px solid rgba(255, 255, 255, 0.5);
+              border-radius: 40px;
+              padding: 10px 20px;
+              color: white;
+            }
+          }
+        }
+      }
+
+      #lower-section {
+        width: 100%;
+
+        #line {
+          margin: auto;
+          width: 100%;
+          height: 1px;
+          background: linear-gradient(
+            to right,
+            transparent,
+            rgba(255, 255, 255, 0.5),
+            transparent
+          );
+          box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+        }
+      }
+    }
+
+    #hero-heading {
+      position: relative;
+      z-index: 99;
+      margin-top: 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+
+      > h1 {
+        font-size: 7.3rem;
+        font-weight: 500;
+        text-align: center;
+        line-height: 1;
+        background: url("./public/From\ KlickPin\ CF\ Dance\ v20\ __\ Graphic\ Poster\ +\ Motion\ в\ 2025\ г\ _\ Баннер\ Графический\ дизайн\ Живописные\ фотографии.gif");
+        background-clip: text;
+        background-size: cover;
+        background-position: center;
+        color: transparent;
+      }
+
+      > p {
+        font-size: 1.2rem;
+        text-align: center;
+      }
+
+      > button {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        background-color: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.575);
+        padding: 11px 16px;
+        border-radius: 40px;
+        color: white;
+        opacity: 0.8;
+      }
+    }
+
+    video {
+      width: 100%;
+      object-position: center;
+      position: absolute;
+      z-index: 9;
+      top: 120%;
+      left: 0;
+      transform: scale(3);
+    }
+
+  }
 }
 
 
+
+
+
+
+
+
+
+@media (min-width: 1024px) {
+
+  main {
+
+    #view-1 {
+
+      nav {
+        max-width: 70%;
+        padding: 1.5rem;
+        gap: 1rem;
+
+        #upper-section {
+          #nav-left {
+            > h1 {
+              font-size: 1.3rem;
+            }
+          }
+
+          #nav-right {
+            > button {
+              display: none;
+            }
+
+            > div {
+              display: flex;
+              > button {
+                background-color: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                border-radius: 40px;
+                padding: 15px 20px;
+                color: white;
+                font-size: 0.88rem;
+              }
+            }
+          }
+        }
+      }
+
+      #hero-heading {
+        > h1 {
+          font-size: 10rem;
+          font-weight: 500;
+        }
+
+        >p {
+          font-size: 1rem;
+        }
+
+        >button{
+           font-size: .9rem;
+           padding: 14px 19px;
+           background: rgba(255, 255, 255, 0.226);
+           backdrop-filter: blur(10px);
+
+        }
+
+
+      }
+
+      >video {
+        transform: scale(1);
+        top: 40%;
+      }
+
+    }
+
+  }
+
+}
